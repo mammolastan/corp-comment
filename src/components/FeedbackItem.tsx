@@ -5,7 +5,7 @@ type FeedbackItemProps = { feedbackItem: TFeedbackItem }
 
 export default function FeedbackItem({ feedbackItem }: FeedbackItemProps) {
 
-    const { upvoteCount, badgeLetter, companyName, text, daysAgo } = feedbackItem;
+    const { upvoteCount, badgeLetter, company, text, daysAgo } = feedbackItem;
 
     return (
         <li className="feedback">
@@ -17,12 +17,12 @@ export default function FeedbackItem({ feedbackItem }: FeedbackItemProps) {
             <div>
                 <p>{badgeLetter}</p>
             </div>
-            <div><p>{companyName}</p>
+            <div><p>{company}</p>
                 <p>
                     {text}
                 </p>
             </div>
-            <p>{daysAgo}d</p>
+            <p>{daysAgo === 0 ? "NEW" : `${daysAgo}d`}</p>
         </li>
     )
 }
