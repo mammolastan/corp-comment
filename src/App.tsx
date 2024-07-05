@@ -47,7 +47,6 @@ function App() {
       body: JSON.stringify(newItem)
     })
   }
-
   const handleSelectCompany = (company: string) => {
     setSelectedCompany(company);
   }
